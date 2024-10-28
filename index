@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neko / Saiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1a1a1a, #000000, #000000);
+            color: #179fc9;
+            user-select: none;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #33333300;
+            color: #179fc9;
+        }
+        .button {
+            background-color: #555;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #179fc9;
+        }
+        .game-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px auto;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+        .game-item {
+            margin: 20px;
+            perspective: 1000px;
+        }
+        .game-image {
+            max-width: 1000px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.1s ease;
+            will-change: transform;
+        }
+
+        .game-info {
+            margin-top: 20px;
+            max-width: 800px;
+            text-align: center;
+        }
+        .game-info h1 {
+            color: #179fc9;
+        }
+        .game-info p {
+            color: #179fc9;
+        }
+
+        .play-now-button {
+            background-color: #555;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        .play-now-button:hover {
+            background-color: #179fc9;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .game-image {
+                max-width: 80%;
+                height: auto;
+            }
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: transparent;
+            border: 8px solid rgba(23, 159, 201, 0.8);
+            transform: scale(0);
+            animation: expandFade 0.5s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes expandFade {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" onkeydown="return preventF12(event);" onmousedown="return preventMouseDown(event);">
+
+    <div class="header">
+        <h1 id="header-title">Welcome to the World of The Neko</h1>
+        <p id="header-subtitle">What The Website?</p>
+    </div>
+
+    <div class="game-container">
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/1.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/2.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/3.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/4.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/5.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/6.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/7.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/8.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/9.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/10.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/11.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/12.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/13.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/14.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/15.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/16.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/17.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/18.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/19.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/20.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/21.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/22.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/23.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/24.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/25.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/26.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/27.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/28.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/29.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/30.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/31.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/32.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/33.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/34.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/35.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/36.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/37.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/38.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+        <div class="game-item">
+            <img class="game-image" src="https://github.com/Sylraz-X/Pictures1/blob/main/39.png?raw=true" alt="Neko" onmousemove="rotateImage(event, this)" onmouseleave="resetImage(this)" onclick="preventClick(event)">
+        </div>
+
+        <div class="game-info">
+            <h1 id="game-title">PHE on top!</h1>
+            <p id="game-info-1">มึงล่อเลื่อนจนหมดเลยหรอ</p>
+        </div>
+    </div>
+
+    <script>
+        function rotateImage(event, image) {
+            const rect = image.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            const rotationY = deltaX * 10;
+            const rotationX = -deltaY * 10;
+            image.style.transform = `rotateY(${rotationY}deg) rotateX(${rotationX}deg) scale(1.1)`;
+        }
+
+        function resetImage(image) {
+            image.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+        }
+
+        document.addEventListener('click', (event) => {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            document.body.appendChild(circle);
+            const size = Math.random() * 50 + 50;
+            circle.style.width = size + 'px';
+            circle.style.height = size + 'px';
+            circle.style.left = event.pageX - size / 2 + 'px';
+            circle.style.top = event.pageY - size / 2 + 'px';
+            setTimeout(() => {
+                circle.remove();
+            }, 500);
+        });
+
+        function preventClick(event) {
+            event.preventDefault();
+        }
+
+        function preventF12(e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+        }
+
+        function preventMouseDown(e) {
+            if (e.button == 2) {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
