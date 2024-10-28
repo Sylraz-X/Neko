@@ -239,8 +239,27 @@
 
         <div class="game-info">
             <h1 id="game-title">PHE on top!</h1>
-            <p id="game-info-1">ยังไม่หยุดดูอีกนะมึง</p>
+            <p id="game-info-1">???</p>
         </div>
+        
+        <script>
+            const messages = [
+                "มึงล่อเลื่อนจนหมดเลยหรอ",
+                "มึงหยุดดูเลย 10 นาทีละนะ",
+                "มึงเงี่ยนมาจากไหนวะ",
+                "30นาที ละนะ",
+                "มึงของขาดมากี่วันวะ"
+            ];
+            const gameInfoElement = document.getElementById('game-info-1');
+            let messageIndex = 0;
+            const intervalId = setInterval(() => {
+                gameInfoElement.textContent = messages[messageIndex];
+                messageIndex++;
+                if (messageIndex >= messages.length) {
+                    clearInterval(intervalId);
+                }
+            }, 600000);
+        </script>
     </div>
 
     <script>
